@@ -69,7 +69,10 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('paste.create') }}">Create paste</a>
+                        <a href="{{ route('paste.list') }}">Pastes</a>
                     @else
+                        <a href="{{ route('paste.create') }}">Create paste</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))

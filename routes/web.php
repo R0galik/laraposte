@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/paste', 'PasteController@index')->name('paste.list');
+Route::get('/paste/create', 'PasteController@createView')->name('paste.createView');
+Route::post('/paste/create', 'PasteController@create')->name('paste.create');
+Route::get('paste/{paste}', 'PasteController@show')->name('paste.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
